@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Web Testing Suite" verbose="1">
+    
+    <!-- Test Groups -->
+    <groups>
+        <run>
+            <include name="smoke"/>
+            <include name="regression"/>
+            <include name="ui"/>
+            <include name="ecommerce"/>
+        </run>
+    </groups>
+    
+    <!-- Test Classes -->
+    <test name="Home Page Tests" preserve-order="true">
+        <classes>
+            <class name="com.mahadsiddiqui.tests.HomePageTests"/>
+        </classes>
+    </test>
+    
+    <!-- Parallel execution configuration -->
+    <listeners>
+        <listener class-name="com.mahadsiddiqui.listeners.TestListener"/>
+        <listener class-name="com.mahadsiddiqui.listeners.AllureListener"/>
+    </listeners>
+    
+    <!-- Parameters -->
+    <parameter name="browser" value="chrome"/>
+    <parameter name="environment" value="test"/>
+    <parameter name="parallel" value="false"/>
+    
+</suite>
